@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using EintechDevTest.Web.Models;
+using Microsoft.EntityFrameworkCore;
+using EintechDevTest.Infrastructure.Data.EntityFramework;
 
 namespace EintechDevTest.Web
 {
@@ -31,8 +34,13 @@ namespace EintechDevTest.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("Default"), 
+                    b => b.MigrationsAssembly("Web.Api.Infrastructure")
+                ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
