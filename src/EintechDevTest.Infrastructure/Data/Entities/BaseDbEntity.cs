@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EintechDevTest.Infrastructure.Data.EntityFramework.Entities
+namespace EintechDevTest.Infrastructure.Data.Entities
 {
-    public class BaseEntity
+    public class BaseDbEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]

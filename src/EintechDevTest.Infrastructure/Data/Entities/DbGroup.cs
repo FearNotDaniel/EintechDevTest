@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using EintechDevTest.Infrastructure.Data.EntityFramework.Entities;
 
 namespace EintechDevTest.Infrastructure.Data.Entities
 {
-    public class Group : BaseEntity
+    public class DbGroup : BaseDbEntity
     {
         public string GroupName { get; set; }
     }

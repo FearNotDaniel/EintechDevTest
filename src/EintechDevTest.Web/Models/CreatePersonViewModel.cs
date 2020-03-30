@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using EintechDevTest.Infrastructure.Data.EntityFramework.Entities;
 
-namespace EintechDevTest.Infrastructure.Data.Entities
+namespace EintechDevTest.Web.Models
 {
-    public class Person : BaseEntity
+    public class CreatePersonViewModel
     {
+        [Required]
         public string FullName { get; set; }
+        [Required]
         public int GroupID { get; set; }
-        public Group Group { get; set; }
     }
 }

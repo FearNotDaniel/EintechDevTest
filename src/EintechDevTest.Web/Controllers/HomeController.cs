@@ -12,7 +12,7 @@ namespace EintechDevTest.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return Redirect("/People");
         }
 
         public IActionResult About()

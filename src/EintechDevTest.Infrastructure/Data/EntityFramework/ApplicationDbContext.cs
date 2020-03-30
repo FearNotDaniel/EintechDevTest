@@ -13,7 +13,7 @@ namespace EintechDevTest.Infrastructure.Data.EntityFramework
         {
         }
 
-        public DbSet<Group> Groups { get; set; }
-        public DbSet<Person> People { get; set; }
+        public DbSet<DbGroup> Groups { get; set; }
+        public DbSet<DbPerson> People { get; set; }
     }
 }
